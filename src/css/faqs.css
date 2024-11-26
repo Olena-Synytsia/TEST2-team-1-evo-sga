@@ -7,8 +7,18 @@
   background-position: 120px -76px;
 }
 
-.faq-icon path {
-  stroke: #2a4b4e;
+.faq-item-text {
+  max-height: 0; /* Початковий стан — прихований текст */
+  padding: 0; /* Початковий паддінг */
+  overflow: hidden; /* Приховує вміст */
+  opacity: 0; /* Текст невидимий */
+  transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease; /* Плавна анімація */
+}
+
+.faq-item.is-active .faq-item-text {
+  max-height: 200px; /* Висота при відкритті */
+  padding: 24px 0 0 0; /* Паддінг для відкритого елементу */
+  opacity: 1; /* Текст стає видимим */
 }
 
 .faq-title {
@@ -60,8 +70,10 @@ button#ac-trigger-5.btn-item.ac-trigger {
   width: 34px;
   height: 34px;
   padding: 0;
-  background-color: #daa520;
   border-radius: 50%;
+}
+.faq-icon {
+  fill: #daa520;
 }
 
 .is-active .faq-icon {
