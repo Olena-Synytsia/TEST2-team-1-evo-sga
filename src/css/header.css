@@ -6,6 +6,16 @@ html {
   overflow: hidden;
 }
 
+/* section {
+  padding-top: calc(
+    72px + 5vw
+  );
+} */
+
+section {
+  padding-top: 0;
+}
+
 .header-page {
   min-width: 320px;
   height: 72px;
@@ -57,7 +67,89 @@ svg.header-icon-menu {
   fill: #daa520;
 }
 
+/* Стилистика модалки */
 .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  /* Бекдроп має плавно з'являтись */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0s 0.2s; /* Плавна поява бекдропу */
+}
+
+/* Клас для показу бекдропу */
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s 0s; /* Бекдроп стає видимим */
+}
+
+/* Стилистика контенту модалки */
+/* Бекдроп (темний фон) */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  /* Бекдроп має плавно з'являтись */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Плавна поява бекдропу */
+}
+
+/* Клас для показу бекдропу */
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s 0s; /* Бекдроп стає видимим */
+}
+
+/* Контент модалки */
+.modal-content {
+  position: absolute;
+  top: 0;
+  right: -100%; /* Початкове положення за межами екрану з правого боку */
+  background-color: white;
+  padding: 68px 16px 38px 16px;
+  background: #8b2d2d;
+  width: 221px;
+  height: 568px;
+  color: #f5f5dc;
+  text-align: center;
+
+  /* Початкові стилі для модалки */
+  opacity: 0; /* Початкова прозорість */
+  transition: opacity 0.3s ease, right 0.3s ease; /* Плавне відкриття */
+}
+
+/* Клас для показу контенту модалки */
+.modal.show .modal-content {
+  right: 0; /* Модалка виїжджає на своє місце */
+  opacity: 1; /* Модалка стає видимою */
+}
+
+/* Закриваюча кнопка */
+.closeBtn {
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background: #8b2d2d;
+  border: none;
+}
+/* .modal {
   display: none;
   position: fixed;
   top: 0;
@@ -90,7 +182,7 @@ svg.header-icon-menu {
   right: 0;
   background: #8b2d2d;
   border: none;
-}
+} */
 
 .header-nav-ul {
   display: grid;

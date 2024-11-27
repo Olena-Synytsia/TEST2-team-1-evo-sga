@@ -8,17 +8,15 @@
 }
 
 .faq-item-text {
-  max-height: 0; /* Початковий стан — прихований текст */
-  padding: 0; /* Початковий паддінг */
-  overflow: hidden; /* Приховує вміст */
-  opacity: 0; /* Текст невидимий */
-  transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease; /* Плавна анімація */
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 1s ease, padding 1s ease, opacity 0.6s ease;
 }
 
 .faq-item.is-active .faq-item-text {
-  max-height: 200px; /* Висота при відкритті */
-  padding: 24px 0 0 0; /* Паддінг для відкритого елементу */
-  opacity: 1; /* Текст стає видимим */
+  margin-top: 24px;
+  opacity: 1;
 }
 
 .faq-title {
@@ -51,6 +49,7 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   padding: 20px 0;
+  margin-bottom: 24px;
 }
 
 /* .faq-list .faq-item .faq-item-title {
